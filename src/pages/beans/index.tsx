@@ -1,8 +1,9 @@
 import React, {useEffect} from "react";
 import {useInfiniteQuery} from "@tanstack/react-query";
 import {getAllBeans} from "../../api";
-import {Table} from "../../components";
+import {CartBean, Table} from "../../components";
 import {useInView} from "react-intersection-observer";
+import {Preloader} from "../../components/preloader";
 
 export const BeansPage: React.FC = () => {
 
@@ -23,18 +24,19 @@ export const BeansPage: React.FC = () => {
     }
   }, [fetchNextPage, inView]);
   return status === "pending"
-    ? (<div>Loading</div>)
+    ? (
+      <Preloader/>
+    )
     : status === "error"
       ? (<div>error</div>)
       : (
         <div>
           {data.pages.map((group) => (
-            <div className={"mt-5 w-2/3  bg-orange-50"}>
-              <Table data={group.items}/>
+            <div className={"mt-5 mx-auto w-2/3"}>
+              <Table data={group.items} Component={CartBean}/>
             </div>
           ))}
           <div ref={ref}>{isFetchingNextPage && "Loading..."}</div>
-
         </div>
       );
 };
