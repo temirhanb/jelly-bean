@@ -1,10 +1,10 @@
 import axios from "axios";
 import {API} from "../../../shared/constants";
-import {IBeansRequest} from "../../../shared/types/beans";
+import {ICombinationRequest} from "../../../shared/types/combination";
 
-export const getAllBeans = async ({pageParam}: { pageParam: number }): Promise<IBeansRequest> => {
+export const getAllCombinations = async ({pageParam}: { pageParam: number }): Promise<ICombinationRequest> => {
 
-  const {data} = await axios.get(API + `beans?pageIndex=${pageParam}&pageSize=10`);
+  const {data} = await axios.get(API + `combinations?pageIndex=${pageParam}&pageSize=10`);
 
   return {
     items: data.items,
