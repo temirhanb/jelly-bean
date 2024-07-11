@@ -23,6 +23,7 @@ export const CombinationsPage: React.FC = () => {
       fetchNextPage();
     }
   }, [fetchNextPage, inView]);
+
   return status === "pending"
     ? (
       <Preloader/>
@@ -33,7 +34,7 @@ export const CombinationsPage: React.FC = () => {
         <div>
           {data.pages.map((group) => (
             <div className={"mt-5 mx-auto w-2/3"}>
-              <div className={"grid grid-cols-2 gap-4"}>
+              <div className={"grid grid-cols-1 gap-4"}>
                 {group.items.map((item) => <CartCombination key={item.combinationId} item={item}/>)}
               </div>
             </div>
