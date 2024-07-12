@@ -5,6 +5,7 @@ import {BeansPage, CombinationsPage, FactsPage, HistoryPage, RecipesPage} from "
 import {NotFoundPage} from "./pages/notFound";
 import {BeanPage} from "./pages/beans/bean";
 import {CombinationPage} from "./pages/combinations/combination";
+import {FactPage} from "./pages/facts/fact";
 
 export const App: React.FC = () => {
 
@@ -18,8 +19,11 @@ export const App: React.FC = () => {
           <Route path={"/combinations/:id"} element={<CombinationPage/>}/>
           <Route path={"/combinations"} element={<CombinationsPage/>}/>
           <Route path={"/facts"} element={<FactsPage/>}/>
+          <Route path={"/facts/:id"} element={<FactPage/>}/>
           <Route path={"/recipes"} element={<RecipesPage/>}/>
+          <Route path={"/recipes/:id"} element={<RecipesPage/>}/>
           <Route path={"/history"} element={<HistoryPage/>}/>
+          <Route path={"/history/:id"} element={<HistoryPage/>}/>
           <Route path={"/*"} element={<NotFoundPage/>}/>
         </Route>
       </Routes>
