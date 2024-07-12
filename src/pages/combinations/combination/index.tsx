@@ -9,7 +9,7 @@ export const CombinationPage = () => {
   const hrefId = href[href.length - 1];
 
   const {data, isLoading, isSuccess} = useQuery({
-    queryKey: ["bean", hrefId],
+    queryKey: ["combination", hrefId],
     queryFn: () => getCurrentCombinations(hrefId),
   });
 
