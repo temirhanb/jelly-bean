@@ -2,8 +2,8 @@ import React, {useEffect} from "react";
 import {useInfiniteQuery} from "@tanstack/react-query";
 import {useInView} from "react-intersection-observer";
 import {Preloader} from "../../components/preloader";
-import {getAllFacts} from "../../api/facts/getAllFacts";
-import {CartFacts} from "../../components/carts/facts";
+import {getAllFacts} from "../../api/facts";
+import {CartFacts} from "../../components";
 
 export const FactsPage: React.FC = () => {
 

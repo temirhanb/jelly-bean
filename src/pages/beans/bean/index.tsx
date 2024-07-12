@@ -14,7 +14,7 @@ export const BeanPage = () => {
   });
 
   return isLoading ? (<Preloader/>) : isSuccess && (
-    <div className={"h-full p-5 text-red-500 w-2/4 bg-white rounded-xl mt-10"}>
+    <div className={"h-full p-5 shadow-xl text-red-500 w-2/4 bg-white rounded-xl mt-10"}>
       <div className={"flex flex-row"}>
         <img className={"h-56"} src={data.imageUrl} alt=""/>
         <div>
