@@ -1,2 +1,2 @@
-export * from './getAllBeans'
-export * from './getCurrentBeans'
+export * from "./getAllBeans";
+export * from "./getCurrentBeans";

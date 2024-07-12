@@ -1,6 +1,6 @@
 import React from "react";
-import {IBeansItem} from "../../../shared/types/beans";
 import {Link} from "react-router-dom";
+import {IBeansItem} from "../../../shared/types";
 
 interface IProps {
   item: IBeansItem;
@@ -9,7 +9,8 @@ interface IProps {
 export const CartBean: React.FC<IProps> = ({item}) => {
 
   return (
-    <div className={"flex items-center flex-col hover:bg-white hover:drop-shadow-lg m-2 p-5 text-red-500 rounded-lg"}>
+    <div
+      className={"flex border-red-500 border bg-white md:bg-inherit items-center flex-col hover:bg-white hover:drop-shadow-lg m-2 p-5 text-red-500 rounded-lg"}>
       <div className={"mb-2"}>
         <img className={"h-32"} src={item.imageUrl} alt=""/>
       </div>

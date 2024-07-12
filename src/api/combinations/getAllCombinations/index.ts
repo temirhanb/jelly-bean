@@ -1,6 +1,6 @@
 import axios from "axios";
 import {API} from "../../../shared/constants";
-import {ICombinationRequest} from "../../../shared/types/combination";
+import {ICombinationRequest} from "../../../shared/types";
 
 export const getAllCombinations = async ({pageParam}: { pageParam: number }): Promise<ICombinationRequest> => {
 

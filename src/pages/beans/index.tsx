@@ -4,6 +4,8 @@ import {getAllBeans} from "../../api";
 import {CartBean} from "../../components";
 import {useInView} from "react-intersection-observer";
 import {Preloader} from "../../components/preloader";
+import {EStatus} from "../../shared/enums";
+import {NotFoundPage} from "../notFound";
 
 export const BeansPage: React.FC = () => {
 
@@ -11,6 +13,7 @@ export const BeansPage: React.FC = () => {
     queryKey: ["beans"],
     queryFn: getAllBeans,
     initialPageParam: 1,
+
     getNextPageParam: ({currentPage, totalPages}) => {
       const nextPage: number = currentPage + 1;
       return currentPage <= totalPages ? nextPage : undefined;
@@ -23,22 +26,23 @@ export const BeansPage: React.FC = () => {
       fetchNextPage();
     }
   }, [fetchNextPage, inView]);
-  return status === "pending"
+  return status === EStatus.PENDING
     ? (
       <Preloader/>
     )
-    : status === "error"
-      ? (<div>error</div>)
+    : status === EStatus.ERROR
+      ? (<NotFoundPage/>)
       : (
-        <div>
+        <>
           {data.pages.map((group) => (
-            <div className={"mt-5 mx-auto w-2/3"}>
-              <div className={"grid grid-cols-2 gap-4"}>
+            <div className={"mt-5 md:mx-auto md:w-2/3 w-11/12"}>
+              <div className={"grid md:grid-cols-2 md:gap-4 grid-cols-1 gap-2"}>
                 {group.items.map((item) => <CartBean key={item.beanId} item={item}/>)}
               </div>
             </div>
           ))}
-          <div ref={ref}>{isFetchingNextPage && "Loading..."}</div>
-        </div>
+          {isFetchingNextPage && (<div className={"relative flex items-center justify-center"}><Preloader/></div>)}
+          <div ref={ref}/>
+        </>
       );
 };

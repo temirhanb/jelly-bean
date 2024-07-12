@@ -1,2 +1,2 @@
-export * from './getAllCombinations'
-export * from './getCurrentCombinations'
+export * from "./getAllCombinations";
+export * from "./getCurrentCombinations";

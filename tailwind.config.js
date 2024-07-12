@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 export default {
   content: [
     "./index.html",
@@ -6,7 +6,10 @@ export default {
   ],
   theme: {
     extend: {},
+    screens: {
+      "md": "640px",
+    },
   },
   plugins: [],
-}
+};
 

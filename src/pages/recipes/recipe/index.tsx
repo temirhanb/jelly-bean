@@ -1,6 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
 import {Preloader} from "../../../components/preloader";
-import {getCurrentRecipe} from "../../../api/recipes";
+import {getCurrentRecipe} from "../../../api";
 
 export const RecipePage = () => {
 
@@ -14,8 +14,8 @@ export const RecipePage = () => {
   });
 
   return isLoading ? (<Preloader/>) : isSuccess && (
-    <div className={"h-full p-5 shadow-xl text-red-500 w-3/4 bg-white rounded-xl mt-10"}>
-      <div className={"flex flex-row"}>
+    <div className={"h-full p-5 shadow-xl text-red-500 md:w-3/4 w-11/12  bg-white rounded-xl mt-10"}>
+      <div className={"flex md:flex-row flex-col"}>
         <img className={"h-56 rounded-xl mr-5"} src={data.imageUrl} alt=""/>
         <div>
           <h1 className={"font-bold text-2xl"}>

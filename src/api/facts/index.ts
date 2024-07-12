@@ -1,2 +1,2 @@
-export * from './getAllFacts'
-export * from './getCurrentFacts'
+export * from "./getAllFacts";
+export * from "./getCurrentFacts";

@@ -1,10 +1,10 @@
 import axios from "axios";
 import {API} from "../../../shared/constants";
-import {IBeansRequest} from "../../../shared/types";
+import {IHistoryRequest} from "../../../shared/types";
 
-export const getAllBeans = async ({pageParam}: { pageParam: number }): Promise<IBeansRequest> => {
+export const getAllHistory = async ({pageParam}: { pageParam: number }): Promise<IHistoryRequest> => {
 
-  const {data} = await axios.get(API + `beans?pageIndex=${pageParam}&pageSize=10`);
+  const {data} = await axios.get(API + `mileStones?pageIndex=${pageParam}&pageSize=10`);
 
   return {
     items: data.items,

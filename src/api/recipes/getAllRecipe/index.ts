@@ -1,6 +1,6 @@
 import axios from "axios";
 import {API} from "../../../shared/constants";
-import {IRecipeRequest} from "../../../shared/types/recipe";
+import {IRecipeRequest} from "../../../shared/types";
 
 export const getAllRecipe = async ({pageParam}: { pageParam: number }): Promise<IRecipeRequest> => {
 

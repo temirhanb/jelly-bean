@@ -1,6 +1,6 @@
 import axios from "axios";
 import {API} from "../../../shared/constants";
-import {IFactsRequest} from "../../../shared/types/facts";
+import {IFactsRequest} from "../../../shared/types";
 
 export const getAllFacts = async ({pageParam}: { pageParam: number }): Promise<IFactsRequest> => {
 

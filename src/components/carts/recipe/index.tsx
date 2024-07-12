@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {IRecipeItem} from "../../../shared/types/recipe";
+import {IRecipeItem} from "../../../shared/types";
 
 interface IProps {
   item: IRecipeItem;
@@ -9,7 +9,8 @@ interface IProps {
 export const CartRecipe: React.FC<IProps> = ({item}) => {
 
   return (
-    <div className={"flex items-center flex-col hover:bg-white hover:drop-shadow-lg m-2 p-5 text-red-500 rounded-lg"}>
+    <div
+      className={"flex bg-white md:bg-inherit border-red-500 border  items-center flex-col hover:bg-white hover:drop-shadow-lg m-2 p-5 text-red-500 rounded-lg"}>
       <div className={"mb-2"}>
         <img className={"h-32 rounded-xl"} src={item.imageUrl} alt=""/>
       </div>

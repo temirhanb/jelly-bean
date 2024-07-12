@@ -1,6 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
 import {Preloader} from "../../../components/preloader";
-import {getCurrentFacts} from "../../../api/facts";
+import {getCurrentFacts} from "../../../api";
 
 export const FactPage = () => {
 
@@ -14,7 +14,7 @@ export const FactPage = () => {
   });
 
   return isLoading ? (<Preloader/>) : isSuccess && (
-    <div className={"h-full shadow-xl p-5 mt-10 text-red-500 w-2/4 rounded-xl bg-white"}>
+    <div className={"h-full shadow-xl p-5 mt-10 text-red-500 md:w-2/4 w-11/12 rounded-xl bg-white"}>
       <div className={"flex flex-col"}>
         <span className={"font-bold text-2xl"}>{data?.title}</span>
         <span className={"text-xl mt-5"}>{data?.description}</span>
